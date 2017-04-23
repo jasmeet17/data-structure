@@ -47,9 +47,6 @@ class Test(unittest.TestCase):
         llist.insertNodeAtIndex(0,9009)
         self.assertEqual(llist.getAllNodes(), [9009,32,11,10101,132,4])
 
-        # llist.insertNodeAtIndex(0,1010)
-        # self.assertEqual(llist.getAllNodes(),[1010,32,11,132,4,99])
-
     def test_GetNode_From_Particular_Index(self):
         llist = linkedList.SinglyLinkedList()
 
@@ -72,9 +69,18 @@ class Test(unittest.TestCase):
         llist.insertNode(32)
         llist.insertNode(132)
         llist.insertNode(4)
+        llist.insertNode(24)
+        llist.insertNode(1114)
         llist.deleteNodeAtIndex(1)
 
-        self.assertEqual(llist.getAllNodes(), [32,4])
+        self.assertEqual(llist.getAllNodes(), [32,4,24,1114])
+
+        llist.deleteNodeAtIndex(0)
+        self.assertEqual(llist.getAllNodes(), [4,24,1114])
+
+        llist.deleteNodeAtIndex(2)
+        self.assertEqual(llist.getAllNodes(), [4,24])
+
 
 
 if __name__ == '__main__':

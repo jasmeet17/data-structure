@@ -72,10 +72,10 @@ class SinglyLinkedList(object):
                 return
             else:
                 nodeToDelete = nodeBefore.next
-                if nodeToDelete.next != None:
+                if nodeToDelete.next == None:
                     nodeBefore.next = None
                 else:
-
+                    nodeBefore.next=nodeToDelete.next
 
 
     def getAllNodes(self):
